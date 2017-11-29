@@ -37,3 +37,5 @@ packages_dir = os.path.join( __cerbero__ ,'packages' )
 external_packages = {
     'gstreamer':( os.path.join( __cerberus__,'cerbero.gstreamer/packages'), -1 )
 }
+
+build_type='release'
