@@ -38,7 +38,3 @@ packages_dir = os.path.join( __cerbero__ ,'packages' )
 external_packages = {
     'gstreamer':( os.path.join( __cerberus__,'scripts/cerbero/packages') , -1)
 }
-print '---------------------------------'
-print recipes_dir
-print packages_dir
-print '---------------------------------'

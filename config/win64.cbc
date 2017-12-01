@@ -1,6 +1,6 @@
 __dir__      = os.path.abspath( os.path.dirname(__file__) )
-__cerberus__ = os.path.abspath( os.path.join( __dir__,'../..'))
-__cerbero__  = os.path.join(__cerberus__,'cerbero.ribbon')
+__cerberus__ = os.path.abspath( os.path.join( __dir__,'../../..'))
+__cerbero__  = os.path.join(__cerberus__,'scripts/ribbon')
 
 
 from cerbero.config import Architecture
@@ -12,33 +12,28 @@ platform=Platform.WINDOWS
 target_platform=Platform.WINDOWS
 
 
-
 prefix='c:/cerbrus/%s'%arch
 home_dir='c:/cerbrus/build'
 build_tools_prefix= '%s/build-tools/w64'%home_dir
 toolchain_prefix ='%s/mingw/w64'%home_dir 
 
 
-_bprefix='%s/build/%s_%s'%(__cerberus__,platform,arch)
+_bprefix='%s/build/%s_%sd'%(__cerberus__,platform,arch)
 cache_file = 'ribbon-%s_%s.cache'%(platform,arch)
 logs ='%s/logs'%_bprefix
 sources ='%s/sources'%_bprefix
+local_sources = '%s/build/sources/local'%__cerberus__
 
-build_tools_sources = '%s/build_tools/sources'%_bprefix
-build_tools_cache ='build-tools-%s_%s.cache'%(platform,arch)
+#build_tools_sources = '%s/build_tools/sources'%_bprefix
+#build_tools_cache ='build-tools-%s_%s.cache'%(platform,arch)
 
 cached_sources = os.path.join( __cerberus__ ,'cache/sources' )
 
 recipes_dir = os.path.join( __cerbero__ ,'recipes' )
 external_recipes = {
-    'gstreamer':( os.path.join( __cerberus__,'cerbero.gstreamer/recipes'), -1 ),
-    'hacks':( os.path.join( __cerberus__,'cerbero.hacks/recipes'), 0 )
+    'gstreamer':( os.path.join( __cerberus__,'scripts/cerbero/recipes') , -1)
 }
-
 packages_dir = os.path.join( __cerbero__ ,'packages' )
 external_packages = {
-    'gstreamer':( os.path.join( __cerberus__,'cerbero.gstreamer/packages'), -1 ),
-    'hacks':( os.path.join( __cerberus__,'cerbero.hacks/packages'), 0 )
+    'gstreamer':( os.path.join( __cerberus__,'scripts/cerbero/packages') , -1)
 }
-
-build_type='release'
