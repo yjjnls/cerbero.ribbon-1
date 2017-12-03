@@ -45,7 +45,7 @@ class Recipe(recipe.Recipe):
             build = self.config.build_type
             
             
-            if type(self.config.build_type) == type(str):
+            if type(self.config.build_type) == type(''):
                 build = self.config.build_type.lower()
             else:
                 build = 'release'
