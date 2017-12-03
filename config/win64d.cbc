@@ -13,8 +13,8 @@ target_platform=Platform.WINDOWS
 
 build_type='debug'
 
-prefix='c:/cerbrus/%s'%arch
-home_dir='c:/cerbrus/build'
+prefix='%s/%s_%sd'%(__cerberus__,platform,arch)
+home_dir='%s/build/%s_%sd'%(__cerberus__,platform,arch)
 build_tools_prefix= '%s/build-tools/w64'%home_dir
 toolchain_prefix ='%s/mingw/w64'%home_dir 
 
